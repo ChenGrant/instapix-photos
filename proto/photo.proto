@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+
+service PhotoService {
+    rpc GetPhotos(GetPhotosRequest) returns (stream GetPhotoResponse) {};
+    rpc UploadPhotos(stream UploadPhotoRequest) returns (UploadPhotosResponse) {};
+}
+
+
+message RemotePhoto {
+    int32 id = 1;
+    string uid = 2;
+    string name = 3;
+    string content_type = 4;
+    string src = 5;
+}
+
+
+message GetPhotosRequest {
+    string uid = 1;
+}
+
+
+message GetPhotoResponse {
+    RemotePhoto photo = 1;
+}
+
+
+message BinaryPhoto {
+    string uid = 1;
+    string name = 2;
+    bytes content = 3;
+    string content_type = 4;
+}
+
+
+message UploadPhotoRequest {
+    BinaryPhoto photo = 1;
+}
+
+
+message UploadPhotosResponse {
+    bool uploaded = 1;
+}
+

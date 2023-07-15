@@ -1,0 +1,4 @@
+.photos_venv
+__pycache__
+.git
+.gitignore

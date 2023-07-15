@@ -1,0 +1,9 @@
+version: "24.0.2"
+services:
+  user:
+    build: .
+    container_name: instapix-photos
+    environment:
+      - ENV=dockerdev
+    ports:
+      - 50052:50052
