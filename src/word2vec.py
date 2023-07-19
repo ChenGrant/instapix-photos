@@ -12,5 +12,5 @@ def embed_words(words):
     with grpc.insecure_channel(os.environ["WORD2VEC_SERVER_ADDRESS"]) as channel:
         stub = word2vec_pb2_grpc.Word2VecServiceStub(channel)
         response = stub.EmbedWords(word2vec_pb2.EmbedWordsRequest(words=words))
-        embeddings = [embedding.embedding for embedding in response.embeddings]
+        embeddings = [list(embedding.embedding) for embedding in response.embeddings]
         return embeddings
