@@ -1,7 +1,10 @@
 import os
 from dotenv import load_dotenv
 
-__ENV_FILES = {"dev": ".env.dev", "dockerdev": ".env.dockerdev"}
+__ENV_FILES = {
+    "dev": ".env.dev",
+    "prod": ".env.prod",
+}
 
 
 # loads env variables based on current ENV

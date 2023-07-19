@@ -4,6 +4,6 @@ services:
     build: .
     container_name: instapix-photos
     environment:
-      - ENV=dockerdev
+      - ENV=prod
     ports:
       - 50052:50052

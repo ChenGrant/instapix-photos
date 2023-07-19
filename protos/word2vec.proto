@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+message Embedding {
+    repeated float embedding = 1;
+}
+
+service Word2VecService {
+    rpc EmbedWords(EmbedWordsRequest) returns (EmbedWordsResponse) {};
+    rpc Similarity(SimilarityRequest) returns (SimilarityResponse) {};
+}
+
+message EmbedWordsRequest {
+    repeated string words = 1;
+}
+
+message EmbedWordsResponse {
+    repeated Embedding embeddings = 1;
+}
+
+message SimilarityRequest {
+    repeated Embedding embeddings1 = 1;
+    repeated Embedding embeddings2 = 2;
+}
+
+message SimilarityResponse {
+    float similarity = 1;
+}

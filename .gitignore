@@ -1,9 +1,7 @@
 .photos_venv
 __pycache__
 .env.dev
-.env.dockerdev
-firebase_service_account_key.dev.json
-firebase_service_account_key.prod.json
-google_application_credentials.dev.json
-google_application_credentials.prod.json
-GoogleNews-vectors-negative300.bin.gz
+.env.prod
+deploy.sh
+firebase_service_account_key.json
+google_application_credentials.json
