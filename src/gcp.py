@@ -19,7 +19,7 @@ def upload_photo(uid, name, content, content_type):
     blob = bucket.blob(f"{uid}/{name}")
     blob.upload_from_string(content, content_type=content_type)
     return blob.generate_signed_url(
-        version="v4", expiration=datetime.timedelta(days=365), method="GET"
+        version="v4", expiration=datetime.timedelta(days=7), method="GET"
     )
 
 

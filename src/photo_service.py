@@ -13,7 +13,7 @@ import photo_pb2_grpc
 class Photo(photo_pb2_grpc.PhotoServiceServicer):
     def GetPhotos(self, request, context):
         print("GetPhotos request received")
-        
+
         uid = request.uid
         db.initialize()
         photos = db.select_photos(uid=uid)
