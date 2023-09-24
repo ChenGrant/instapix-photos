@@ -4,7 +4,7 @@ from concurrent import futures
 import grpc
 from photo_service import Photo
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../proto")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../protos")))
 import photo_pb2_grpc
 
 
